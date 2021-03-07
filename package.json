@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/index.html --no-cache --no-source-maps --dist-dir build --public-url ./build",
+    "build": "parcel build src/manifest.json --no-cache --no-source-maps --dist-dir build --public-url ./build",
     "start": "parcel serve src/index.html"
   },
   "repository": {
