@@ -62,6 +62,46 @@ export default {
       leftDrawerOpen: false,
       essentialLinks: linksData
     }
+  },
+  mounted(){
+    const root = document.querySelector('#q-app')
+    const cursor = document.querySelector('.cursor')
+    root.addEventListener('mousemove', (e) => {
+      setPosition(cursor, e)
+    });
+    root.addEventListener('touchmove', (e) => {
+      setPosition(cursor, e)
+    });
+    root.addEventListener('touchstart', (e) => {
+      setPosition(cursor, e)
+    });
+      TweenMax.set(cursor, {y: 10})
+      TweenMax.to(cursor, 1, {
+        y:-10,
+        yoyo:true,
+        repeat:-1,
+        ease: Power2.easeInOut
+      })
+
+    function setPosition(element, e) {
+      let x = e.clientX;
+      let y = e.clientY;
+
+      if(e.touches&&e.touches[0]){
+        x = e.touches[0].clientX;
+        y = e.touches[0].clientY;
+      }
+      TweenMax.to(
+        ".cursor",
+        1,
+        {
+          left:x-cursor.width/2+"px",
+          top:y-cursor.height/2+"px",
+          ease: "sine.out"
+        },
+      );
+      // element.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
+    }
   }
 }
 </script>

@@ -1,9 +1,10 @@
 <template>
   <q-page class="start-page flex flex-center">
+    <img src="~assets/mouse.png" alt="" srcset="" class="cursor" draggable="false">
     <div class="bg-1"></div>
     <div class="bg-2"></div>
     <div class="buttons-wrap">
-      <div class="start-button button">Start</div>
+      <div class="start-button button" draggable="false">Start</div>
     </div>
     <img src="~assets/anpanman-run.gif" class="anpanman-run">
   </q-page>
@@ -18,8 +19,6 @@ export default {
       hasPosition:[]
     }
   },
-  mounted(){
-  }
 }
 </script>
 
@@ -55,9 +54,9 @@ export default {
   }
   .anpanman-run{
     position: absolute;
-    right:-8%;
+    right:-6%;
     bottom:5%;
-    width:50%;
+    width:35%;
     max-width:600px;
   }
   .button{
@@ -70,10 +69,48 @@ export default {
     border-radius: 15px;
     color: #F44336;
     background: #FFCDD2;
-    &:hover{
-      transform: scale(1.1);
-      cursor: pointer;
-    }
   }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+.cursor {
+  left: 0;
+  top: 0;
+  width: get_vw(30);
+  height:  get_vw(30);
+  min-width:100px;
+  min-height:100px;
+  position: absolute;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.cursor__follower {
+  transition: transform .4s;
+  width: 6px;
+  height: 6px;
+}
+
+/* Unrelated styles */
+html {
+  cursor: none;
+  background-color: #2d2b2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-family: 'Anton', 'helvetica', sans-serif;
+  font-size: 100px;
+  letter-spacing: 12px;
+  line-height: 1;
+  text-align: center;
+}
+
+h1 span {
+  letter-spacing: 15px;
 }
 </style>
