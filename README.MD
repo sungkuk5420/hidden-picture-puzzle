@@ -1,3 +1,22 @@
-### 숨은 그림 찾기
+# hidden-picture-puzzle (hidden-picture)
 
-## 호빵맨 틀린그림찾기 무료는 다 광고달아놔서 짜증나서 직접만듬.
+anpanman
+
+## Install the dependencies
+```bash
+npm install
+```
+
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
+```bash
+quasar dev
+```
+
+
+### Build the app for production
+```bash
+quasar build
+```
+
+### Customize the configuration
+See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).

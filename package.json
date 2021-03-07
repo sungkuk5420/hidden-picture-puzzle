@@ -1,29 +1,37 @@
 {
-  "name": "parcel-start-kit",
-  "version": "1.0.0",
-  "description": "",
+  "name": "hidden-picture",
+  "version": "0.0.1",
+  "description": "anpanman",
+  "productName": "hidden-picture-puzzle",
+  "author": "sungkuk5420 <sungkuk5420@gmail.com>",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/index.html --no-cache --no-source-maps --dist-dir build --public-url ./build",
-    "start": "parcel serve src/index.html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sungkuk5420/parcel-start-kit.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sungkuk5420/parcel-start-kit/issues"
-  },
-  "homepage": "https://github.com/sungkuk5420/parcel-start-kit#readme",
-  "devDependencies": {
-    "@parcel/packager-raw-url": "^2.0.0-nightly.2242",
-    "parcel": "^2.0.0-nightly.618",
-    "parcel-plugin-sw-precache": "^1.1.2"
+    "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@parcel/transformer-raw": "^2.0.0-alpha.3",
-    "parcel-config-pwa-manifest": "0.0.8"
+    "@quasar/extras": "^1.0.0",
+    "axios": "^0.18.1",
+    "core-js": "^3.6.5",
+    "quasar": "^1.0.0"
+  },
+  "devDependencies": {
+    "@quasar/app": "^2.0.0"
+  },
+  "browserslist": [
+    "ie >= 11",
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 10.18.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
   }
 }

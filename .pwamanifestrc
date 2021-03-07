@@ -1,8 +1,0 @@
-{
-  "name": "My Awesome PWA",
-  "theme": "#ffffff",
-  "generateIconOptions": {
-    "baseIcon": "./images/icon.png",
-    "sizes": [128, 192, 512]
-  }
-}
