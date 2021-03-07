@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/manifest.json --no-cache --no-source-maps --dist-dir build --public-url ./build",
+    "build": "parcel build src/index.html --no-cache --no-source-maps --dist-dir build --public-url ./build",
     "start": "parcel serve src/index.html"
   },
   "repository": {
@@ -20,5 +20,23 @@
   "devDependencies": {
     "parcel": "^2.0.0-beta.1",
     "parcel-plugin-sw-precache": "^1.1.2"
+  },
+  "pwaManifest": {
+    "name": "Anpanman Hidden Puzzle",
+    "shortName": "Hidden Puzzle",
+    "startURL": "./offline",
+    "theme": "#add8e6",
+    "generateIconOptions": {
+      "baseIcon": "./images/icon.png",
+      "sizes": [
+        192,
+        384,
+        512
+      ],
+      "genFavicons": true
+    }
+  },
+  "dependencies": {
+    "parcel-config-pwa-manifest": "0.0.8"
   }
 }
