@@ -1,6 +1,7 @@
 <template>
   <q-page class="start-page flex flex-center">
-    <img src="~assets/mouse.png" alt="" srcset="" class="cursor" draggable="false">
+    <div class="cursor"></div>
+    <img src="~assets/mouse.png" alt="" srcset="" class="follower" draggable="false"/>
     <div class="bg-1"></div>
     <div class="bg-2"></div>
     <div class="buttons-wrap">
@@ -63,18 +64,32 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    @include fz_vw(13);
+    font-size: calc(30px + 2vw);
     padding: 1vw 10vw;
-    border: get_vw(5) solid #D32F2F;
+    border: 10px solid #D32F2F;
     border-radius: 15px;
     color: #F44336;
     background: #FFCDD2;
+    &:hover{
+      transform: scale(1.1);
+    }
   }
 }
 
 @import url('https://fonts.googleapis.com/css?family=Anton');
 
 .cursor {
+  left: 0;
+  top: 0;
+  background: #F44336;
+  width: 10px;
+  height:  10px;
+  position: absolute;
+  border-radius: 5px;
+  z-index: 2;
+  pointer-events: none; 
+}
+.follower {
   left: 0;
   top: 0;
   width: get_vw(30);
@@ -84,6 +99,7 @@ export default {
   position: absolute;
   border-radius: 5px;
   z-index: 1;
+  pointer-events: none; 
 }
 
 .cursor__follower {

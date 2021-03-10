@@ -66,24 +66,25 @@ export default {
   mounted(){
     const root = document.querySelector('#q-app')
     const cursor = document.querySelector('.cursor')
+    const follower = document.querySelector('.follower')
     root.addEventListener('mousemove', (e) => {
-      setPosition(cursor, e)
+      setPosition( e)
     });
     root.addEventListener('touchmove', (e) => {
-      setPosition(cursor, e)
+      setPosition( e)
     });
     root.addEventListener('touchstart', (e) => {
-      setPosition(cursor, e)
+      setPosition( e)
     });
-      TweenMax.set(cursor, {y: 10})
-      TweenMax.to(cursor, 1, {
+      TweenMax.set(follower, {y: 10})
+      TweenMax.to(follower, 1, {
         y:-10,
         yoyo:true,
         repeat:-1,
         ease: Power2.easeInOut
       })
 
-    function setPosition(element, e) {
+    function setPosition( e) {
       let x = e.clientX;
       let y = e.clientY;
 
@@ -92,11 +93,19 @@ export default {
         y = e.touches[0].clientY;
       }
       TweenMax.to(
-        ".cursor",
+        cursor,
+        0,
+        {
+          left:x+"px",
+          top:y+"px",
+        },
+      );
+      TweenMax.to(
+        follower,
         1,
         {
-          left:x-cursor.width/2+"px",
-          top:y-cursor.height/2+"px",
+          left:x-follower.width/2+"px",
+          top:y-follower.height/2+"px",
           ease: "sine.out"
         },
       );
