@@ -2,6 +2,7 @@
   <q-page class="start-page flex flex-center">
     <div class="shot"></div>
     <img src="~assets/mouse.png" alt="" srcset="" class="follower" draggable="false"/>
+    <img src="~assets/lulu.png" alt="" srcset="" class="lulu" draggable="false"/>
     <div class="bg-1"></div>
     <div class="bg-2"></div>
     <div class="buttons-wrap">
@@ -92,6 +93,18 @@ export default {
 .follower {
   left: 0;
   top: 0;
+  width: get_vw(30);
+  height:  get_vw(30);
+  min-width:100px;
+  min-height:100px;
+  position: absolute;
+  border-radius: 5px;
+  z-index: 1;
+  pointer-events: none; 
+}
+.lulu {
+  right: 0;
+  top: 200;
   width: get_vw(30);
   height:  get_vw(30);
   min-width:100px;

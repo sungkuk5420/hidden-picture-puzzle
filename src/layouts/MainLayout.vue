@@ -67,6 +67,7 @@ export default {
     const root = document.querySelector('#q-app')
     const shot = document.querySelector('.shot')
     const follower = document.querySelector('.follower')
+    const lulu = document.querySelector('.lulu')
     root.addEventListener('mousemove', (e) => {
       setPosition( e)
     });
@@ -83,10 +84,16 @@ export default {
     TweenMax.to(follower, 1, {
       rotationY: -180,
       y:-10,
-      yoyo:true,
       repeat:-1,
       ease: Power2.easeInOut
     })
+    TweenMax.set(lulu, {rotationY: -180, y: 10})
+    TweenMax.to(lulu, 10, {
+        duration: 1,
+        left: 0,
+        rotation: 0
+      },
+    );
 
     function setPosition( e) {
       let x = e.clientX;
@@ -134,7 +141,6 @@ export default {
             rotation: 0
           },
         );
-        // element.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
     }
   }
 }
