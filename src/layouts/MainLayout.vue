@@ -65,7 +65,7 @@ export default {
   },
   mounted(){
     const root = document.querySelector('#q-app')
-    const cursor = document.querySelector('.cursor')
+    const shot = document.querySelector('.shot')
     const follower = document.querySelector('.follower')
     root.addEventListener('mousemove', (e) => {
       setPosition( e)
@@ -76,13 +76,17 @@ export default {
     root.addEventListener('touchstart', (e) => {
       setPosition( e)
     });
-      TweenMax.set(follower, {y: 10})
-      TweenMax.to(follower, 1, {
-        y:-10,
-        yoyo:true,
-        repeat:-1,
-        ease: Power2.easeInOut
-      })
+    root.addEventListener('click', (e) => {
+      shotting( e)
+    });
+    TweenMax.set(follower, {rotationY: -180, y: 10})
+    TweenMax.to(follower, 1, {
+      rotationY: -180,
+      y:-10,
+      yoyo:true,
+      repeat:-1,
+      ease: Power2.easeInOut
+    })
 
     function setPosition( e) {
       let x = e.clientX;
@@ -93,14 +97,6 @@ export default {
         y = e.touches[0].clientY;
       }
       TweenMax.to(
-        cursor,
-        0,
-        {
-          left:x+"px",
-          top:y+"px",
-        },
-      );
-      TweenMax.to(
         follower,
         1,
         {
@@ -109,7 +105,36 @@ export default {
           ease: "sine.out"
         },
       );
+      TweenMax.to(
+        shot,
+        1,
+        {
+          left:x+"px",
+          top:y+"px"
+        },
+      );
       // element.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
+    }
+    function shotting( e) {
+      console.log(e);
+        let x = e.clientX;
+        let y = e.clientY;
+
+        if(e.touches&&e.touches[0]){
+          x = e.touches[0].clientX;
+          y = e.touches[0].clientY;
+        }
+        console.log(shot);
+        TweenMax.to(
+          shot,
+          1,
+          {
+            duration: 1,
+            left: window.innerWidth,
+            rotation: 0
+          },
+        );
+        // element.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <q-page class="start-page flex flex-center">
-    <div class="cursor"></div>
+    <div class="shot"></div>
     <img src="~assets/mouse.png" alt="" srcset="" class="follower" draggable="false"/>
     <div class="bg-1"></div>
     <div class="bg-2"></div>
@@ -78,7 +78,7 @@ export default {
 
 @import url('https://fonts.googleapis.com/css?family=Anton');
 
-.cursor {
+.shot {
   left: 0;
   top: 0;
   background: #F44336;
